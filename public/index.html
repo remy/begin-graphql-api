@@ -1,0 +1,31 @@
+<!-- look a single file component! -->
+<style>
+  main {
+    background: grey;
+  }
+</style>
+
+<main>Loading...</main>
+
+<script type=module>
+;(async function() {
+
+let query = `{hello}`
+
+let result = await fetch('/graphql', {
+  method: 'post',
+  body: JSON.stringify({query}),
+  headers: {
+    'X-Requested-With': 'XMLHttpRequest',
+    'Content-Type': 'application/json',
+  }
+})
+
+let json = await result.json()
+console.log(json)
+
+let main = document.querySelector('main')
+main.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`
+
+})()
+</script>

@@ -1,10 +1,5 @@
-#
-# Warning! Do Not Edit
-# --------------------
-# This is a generated file and will be overwritten
-#
 @app
-begin-app
+dance-ql5
 
 @http
 get /
